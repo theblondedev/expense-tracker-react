@@ -58,7 +58,3 @@ Create React App
  – Project setup
 
 CSS – Custom styling and colorful theme
-
-Notes
-
-This project was created to combine functionality with fun styling, making finance tracking a little more exciting and visually appealing.
