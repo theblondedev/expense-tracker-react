@@ -1,38 +1,245 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+:root {
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background-color: #f4e6e7;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-height: 100vh;
+  margin: 30px, 0;
+  font-family: "open-sans", sans-serif;
+  font-size: 16px;
+  
+  font-style: normal;
+  color: #4d4e4d;
+  font-weight: 200;
+  font-style: normal;
+
+ 
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  margin: 30px auto;
+  width: 400px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h1 {
+  letter-spacing: 1px;
+  margin: 5px 30px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+  color: #343634;
+  text-align: center;
+}
+
+h2 {
+  letter-spacing: 1px;
+  margin: 0px 80px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+  color: #343634;
+}
+
+
+h3 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 10px;
+  margin: 40px 0 10px;
+}
+
+h4 {
+  margin: 0;
+  
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #343634;
+  text-align: center;
+}
+
+.inc-exp-container {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.plus {
+  color: #a8c3a4;
+}
+
+.money.minus {
+  color: #c96a6a;
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn {
+  cursor: pointer;
+  background-color: #303030;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn:hover {
+  background-color: #505050; 
+  transform: scale(1.05);
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.list li {
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.list li.plus {
+  border-right: 5px solid #a8c3a4;
+}
+
+.list li.minus {
+  border-right: 5px solid #c96a6a;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #c96a6a;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+.app-wrapper {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.app-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Portfolio link (top-left) */
+.portfolio-link {
+  position: fixed;
+  top: 20px;
+  left: -50px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 10px;
+  color: #343634;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.portfolio-link:hover {
+  color: #505050;
+}
+
+/* GitHub logo (bottom center) */
+.github-logo {
+  position: left;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  animation: pulse 2s infinite;
+}
+.github-logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Simple pulse animation */
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateX(-50%) scale(1.1);
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
   }
 }

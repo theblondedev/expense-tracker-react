@@ -1,24 +1,53 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
+import { Header } from './components/Header';
+import { Balance } from './components/Balance';
+import { IncomeExpenses } from './components/IncomeExpenses';
+import { TransactionList } from './components/TransactionList';
+import { AddTransaction } from './components/AddTransaction';
+import { GlobalProvider } from './context/GlobalState';
+import Confetti from 'react-confetti';
+
 import './App.css';
 
 function App() {
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
+
+  const handlePositiveTransaction = () => {
+    setShowConfetti(true);
+    setTimeout(() => setShowConfetti(false), 3000);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
+    <GlobalProvider>
+      <div className={`app-wrapper ${loaded ? 'fade-in' : ''}`}>
+        {/* Portfolio Link (top-left) */}
+        <a href="https://your-portfolio-link.com" className="portfolio-link">
+          ← Back to Portfolio
         </a>
-      </header>
-    </div>
+
+        <Header />
+        <div className='container'>
+          <Balance />
+          <IncomeExpenses />
+          <TransactionList />
+          <AddTransaction onPositiveTransaction={handlePositiveTransaction} />
+        </div>
+
+        {/* GitHub Link */}
+        <div className="github-logo">
+          <a href="https://github.com/theblondedev" target="_blank" rel="noopener noreferrer">
+            <img src="/github.png" alt="GitHub" />
+          </a>
+        </div>
+
+        {showConfetti && <Confetti />}
+      </div>
+    </GlobalProvider>
   );
 }
 
