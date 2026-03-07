@@ -1,4 +1,5 @@
 **Expense Tracker React App**
+
 A simple, fun, and visually appealing expense tracker built with React.
 
 This app allows users to enter income and expenses to track their finances in a straightforward way. To make the experience more enjoyable than traditional finance apps, it features girly colors and pink accents, giving it a fresh and lively feel.
