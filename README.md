@@ -1,5 +1,4 @@
-**Expense Tracker React App
-**
+**Expense Tracker React App**
 A simple, fun, and visually appealing expense tracker built with React.
 
 This app allows users to enter income and expenses to track their finances in a straightforward way. To make the experience more enjoyable than traditional finance apps, it features girly colors and pink accents, giving it a fresh and lively feel.
@@ -16,8 +15,7 @@ Fun, colorful, and visually engaging UI
 
 Simple and intuitive for daily personal finance tracking
 
-**Getting Started
-**
+**Getting Started**
 These instructions will help you get a copy of the project running on your local machine.
 
 Prerequisites
@@ -38,8 +36,7 @@ Navigate to the project folder:
 
 cd expense-tracker-react
 
-**Install dependencies:
-**
+**Install dependencies:**
 npm install
 
 Start the development server:
