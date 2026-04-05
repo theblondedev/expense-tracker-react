@@ -26,7 +26,7 @@ function App() {
     <GlobalProvider>
       <div className={`app-wrapper ${loaded ? 'fade-in' : ''}`}>
         {/* Portfolio Link (top-left) */}
-        <a href="http://sarshaparisdigital.com.au" className="portfolio-link">
+        <a href="http://sarshaparisdigital.tech" className="portfolio-link">
           ← Back to Portfolio
         </a>
 
